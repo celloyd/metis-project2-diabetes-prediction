@@ -92,11 +92,11 @@ if sanity:
     elif not bp_checkbox:
         result = classifier_abm(age_slider, bmi_slider, not(f_checkbox))
         if st.button('predict my score'):
-            st.success(f'The model puts you at a {round(result, 2)} score')
+            st.success(f'The two-factor model (age & BMI) puts you at a {round(result, 2)} score')
             st.write(score_explainer)
 
     else:
         result = classifier_abmd(age_slider, bmi_slider, not(f_checkbox), diabp_entry)
         if st.button('predict my score'):
-            st.success(f'The model puts you at a {round(result, 2)} score')
+            st.success(f'The three-factor model (age, BMI, and diastolic blood pressure) puts you at a {round(result, 2)} score')
             st.write(score_explainer)
